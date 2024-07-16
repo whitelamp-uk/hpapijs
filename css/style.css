@@ -1,0 +1,271 @@
+
+
+/* Basic imports */
+@import url("./config.css");
+@import url("./normalize.css");
+
+
+
+
+/* This is a list of things that are available in config.css */
+test {
+    /*
+    Rather than hard-wire fonts, colours, etc, instead deploy
+    config.css. This helps with style guide compliance and
+    allows the style guide to change without re-coding all
+    over the shop.
+    */
+    /* Background colour variables */
+    background-color: var(--color-background);
+    background-color: var(--color-background-box);
+    background-color: var(--color-background-button);
+    background-color: var(--color-background-button-menu);
+    background-color: var(--color-background-button-menu-hover);
+    background-color: var(--color-background-input);
+    background-color: var(--color-background-layer);
+    background-color: var(--color-background-ok);
+    background-color: var(--color-background-warning);
+    /* Border colour variables */
+    border-color: var(--color-border-button);
+    border-color: var(--color-border-box);
+    /* Foreground color variables */
+    color: var(--color-foreground);
+    color: var(--color-foreground-button);
+    color: var(--color-foreground-button-menu);
+    color: var(--color-foreground-button-menu-hover);
+    color: var(--color-foreground-greyed);
+    color: var(--color-foreground-input);
+    color: var(--color-foreground-layer);
+    color: var(--color-foreground-ok);
+    color: var(--color-foreground-warning);
+}
+
+
+
+/* Framework handler elements */
+a[data-handlers],
+button[data-handlers] {
+    background-color: var(--color-background-button);
+    color: var(--color-foreground-button);
+    cursor: pointer;
+}
+a[data-handlers]:hover,
+button[data-handlers]:hover {
+}
+menu li {
+    background-color: var(--color-background-button-menu);
+    color: var(--color-foreground-button-menu);
+    cursor: pointer;
+}
+menu li:hover {
+    background-color: var(--color-background-button-menu-hover);
+    color: var(--color-foreground-button-menu-hover);
+}
+
+
+/* Framework form auto-complete POST sump */
+iframe[data-autocomplete] {
+    display: none !important;
+}
+
+
+/* Framework template placeholders */
+[data-array] {
+}
+[data-construction] {
+    display: none;
+}
+[data-index] {
+}
+[data-property] {
+}
+
+
+/* Framework inputs */
+input[data-email] {
+}
+input[data-password] {
+}
+
+
+/* Framework layout elements */
+section[data-app] {
+    display: block;
+}
+section[data-body] {
+}
+section[data-box] {
+}
+section[data-footer] {
+    position: absolute;
+    display: none;
+}
+section[data-header] {
+    position: absolute;
+    display: none;
+}
+section[data-layer] {
+    background-color: var(--color-background-layer);
+    border-color: var(--color-border-layer);
+    color: var(--color-foreground-layer);
+}
+section[data-layer="1"] {
+    z-index: 1;
+}
+section[data-layer="2"] {
+    z-index: 2;
+}
+section[data-login] {
+    display: block;
+}
+section[data-menu] {
+    display: block;
+}
+section[data-menu="1"] {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: calc(100vw - 2rem);
+    height: 5rem;
+}
+section[data-wrapper] {
+    position: absolute;
+    display: block;
+    top: 7rem;
+    left: 1rem;
+    width: calc(100vw - 2rem);
+    height: calc(100vh - 8rem);
+    padding: 0;
+}
+section[data-wrapper] > section[data-app],
+section[data-wrapper] > section[data-login] {
+    position: absolute;
+    overflow-x: auto;
+    overflow-y: scroll;
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 2rem;
+}
+
+/* App general selectors */
+body {
+    background-color: var(--color-background);
+    font-family: var(--font-family);
+    font-size: 1rem;
+}
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.75rem;
+}
+h3 {
+    font-size: 1.5rem;
+}
+h4 {
+    font-size: 1.25rem;
+}
+input {
+    background-color: var(--color-background-input);
+    background-color: var(--color-foreground-input);
+}
+/* Foreground colours */
+.greyed {
+    color: var(--color-foreground-greyed);
+}
+.error {
+    color: var(--color-foreground-error);
+}
+.warning {
+    color: var(--color-foreground-warning);
+}
+.ok {
+    color: var(--color-foreground-ok);
+}
+
+/* Detailed CSS */
+@import url("./detailed.css");
+
+/* Application boxes */
+[data-box] {
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--color-border-box);
+    background-color: var(--color-background-box);
+    box-sizing: border-box;
+}
+[data-box][data-zindex] {
+    /* Boxes with a z-index (normally all of them except [data-app]) */
+    position: fixed;
+    background-color: var(--color-background-layer);
+}
+[data-box][data-zindex].notify {
+    background-color: transparent;
+}
+[data-box].notify {
+    left: 25vw;
+    top: calc(50vh - 1rem);
+    width: 50vw;
+    text-align: center;
+}
+[data-box].notify > * {
+    /* Expect a single nested tag */
+    display: inline;
+    background-color: var(--color-background-layer);
+}
+[data-box].splash {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    background-color: var(--color-background-layer);
+}
+[data-box].splash > * {
+    /* Expect a single nested tag */
+    display: flex;
+    margin: auto;
+}
+
+/*
+A more than sufficient number of layers to meet your needs.
+The framework recycles z-index values from closed boxes so you need to
+specify as many layers as boxes that need to be open as any one time
+*/
+[data-box][data-zindex="1"] { z-index: 1; }
+[data-box][data-zindex="2"] { z-index: 2; }
+[data-box][data-zindex="3"] { z-index: 3; }
+[data-box][data-zindex="4"] { z-index: 4; }
+[data-box][data-zindex="5"] { z-index: 5; }
+[data-box][data-zindex="6"] { z-index: 6; }
+[data-box][data-zindex="7"] { z-index: 7; }
+[data-box][data-zindex="8"] { z-index: 8; }
+[data-box][data-zindex="9"] { z-index: 9; }
+
+/* The !important framework classes */
+.hidden {
+    display: block !important;
+    margin: 0 !important;
+    border-style: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+.readme {
+    display: none !important;
+}
+.undisplayed {
+    display: none !important;
+}
+// Special background colours
+.error {
+    background-color: var(--color-background-error) !important;
+}
+.warning {
+    background-color: var(--color-background-warning) !important;
+}
+.ok {
+    background-color: var(--color-background-ok) !important;
+}
+

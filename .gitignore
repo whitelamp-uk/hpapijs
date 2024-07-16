@@ -1,0 +1,9 @@
+# in any directory
+config.js
+config-iife.js
+.htaccess
+*.log
+*.sublime-workspace
+*.tmp
+#   LibreOffice temporary files
+*#

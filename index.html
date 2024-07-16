@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--
+    <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./media/favicon.ico" type="image/x-icon" />
+-->
+    <link rel="icon" href="data:,">
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script type="module" src="./js/index.js"></script>
+    <script src="./js/iife/papaparse.js"></script>
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <!-- TODO: remove crud and  reduce to config.css and style.css -->
+    <link rel="stylesheet" href="./css/config.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <link rel="author" href="http://www.whitelamp.com/" />
+    <title title="HpapiJS-based web application">HpapiJS - web boilerplate for an Hpapi server</title>
+
+  </head>
+
+  <!--
+  The framework should ignore everything outside of [data-body].
+  Here, the framework body is document.body but that is not compulsory.
+  
+  data-statechange is an optional default value.
+  The method's state-change advice is trumped by this attribute unless
+  the method has rtnValue.force=true.
+  If neither attribute nor method proposes a state change, the framework
+  will throw an error.
+  -->
+
+  <body data-body>
+
+    <script>0</script>
+
+    <section data-header>
+      <h4 class="readme">Stuff at the top</h4>
+    </section>
+
+    <section data-menu="1" data-box data-layer="1" data-handlers="beforeaddlistener {view (menu1)}" data-statechange="none">
+      <h4 class="readme">Insert template menu1</h4>
+    </section>
+
+    <section data-wrapper>
+      <!-- Framework login - not an application box -->
+      <section data-login data-handlers="beforeaddlistener {view (login)}" data-statechange="none">
+              <h4 class="readme">Email/password challenge</h4>}
+      </section>
+      <!-- Application box 0 -->
+      <section data-app data-box="0" data-handlers="beforeaddlistener {view (home)}" data-statechange="push">
+        <h4 class="readme">App.boxes[0]</h4>
+      </section>
+<!--
+      The framework appends application boxes here and automatically numbered and z-indexed:
+      <section data-box="7" data-persistence="view" data-zindex="4">
+      </section>
+      If a method creates a new application box, it cab uses the box number as a stable reference.
+-->
+    </section>
+
+    <section data-footer>
+      <h4 class="readme">Stuff at the bottom</h4>
+    </section>
+
+    <section data-construction></iframe>
+    <iframe data-autocomplete name="autocomplete" src="about:blank"></iframe>
+
+  </body>
+
+</html>
+
+

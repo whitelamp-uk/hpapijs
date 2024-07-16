@@ -1,0 +1,11 @@
+{
+    "folders":
+    [
+        {
+            "path": "./",
+            "file_include_patterns": ["*",".*"],
+            "file_exclude_patterns": ["**.sublime-workspace"],
+            "folder_exclude_patterns": ["**.git"]
+        }
+    ]
+}

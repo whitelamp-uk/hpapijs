@@ -1,0 +1,6 @@
+
+<FilesMatch "\.hbs$">
+    ForceType text/plain
+    AddDefaultCharset UTF-8
+</FilesMatch>
+

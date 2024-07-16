@@ -1,0 +1,82 @@
+
+/* Variables */
+
+:root {
+
+/* COLOURS */
+
+  /* Palette */
+    --color-aero:                                   #7cb9e8;
+    --color-black-olive:                            #3b3c36;
+    --color-blanched-almond:                        #ffebcd;
+    --color-cadmium-orange:                         #ed872d;
+    --color-cultured-pearl:                         #f5f5f5;
+    --color-custom-grey:                            #3b3c36;
+
+  /* Available colours */
+    --color-blue:                                   var(--color-aero);
+    --color-black:                                  var(--color-black-olive);
+    --color-cream:                                  var(--color-blanched-almond);
+    --color-grey:                                   var(--color-custom-grey);
+    --color-orange:                                 var(--color-cadmium-orange);
+    --color-white:                                  var(--color-cultured-pearl);
+    --color-traffic-red:                            rgb(255,140,140);
+    --color-traffic-amber:                          rgb(255,200,140);
+    --color-traffic-green:                          rgb(140,255,140);
+
+  /* Background colours */
+    --color-background:                             var(--color-white);
+    --color-background-button:                      var(--color-blue);
+    --color-background-button-menu:                 var(--color-blue);
+    --color-background-button-menu-hover:           var(--color-black);
+    --color-background-error:                       var(--color-black);
+    --color-background-input:                       var(--color-cream);
+    --color-background-layer:                       var(--color-white);
+    --color-background-ok:                          var(--color-cream);
+    --color-background-warning:                     var(--color-black);
+
+  /* Border colours */
+    --color-border-box:                             var(--color-black);
+    --color-border-button:                          var(--color-black);
+
+  /* Text colors */
+    --color-foreground:                             var(--color-black);
+    --color-foreground-button:                      var(--color-black);
+    --color-foreground-button-menu:                 var(--color-orange);
+    --color-foreground-button-menu-hover:           var(--color-white);
+    --color-foreground-error:                       var(--color-traffic-red);
+    --color-foreground-greyed:                      var(--color-grey);
+    --color-foreground-input:                       var(--color-black);
+    --color-foreground-layer:                       var(--color-black);
+    --color-foreground-ok:                          var(--color-black);
+    --color-foreground-warning:                     var(--color-black);
+
+
+/* FONTS */
+
+  /* Families */
+    --font-family:                                  "sans-serif";
+
+
+/* IMAGES */
+
+  /* General icons */
+    --url-icon-add:                                 url('../media/add.png');
+    --url-icon-burger:                              url('../media/burger.png');
+    --url-icon-calendar:                            url('../media/calendar.png');
+    --url-icon-close:                               url('../media/close.png');
+    --url-icon-collapse:                            url('../media/collapse.png');
+    --url-icon-edit-off:                            url('../media/edit-off.png');
+    --url-icon-edit-on:                             url('../media/edit-on.png');
+    --url-icon-expand:                              url('../media/expand.png');
+    --url-icon-findadd:                             url('../media/findadd.png');
+    --url-icon-lock:                                url('../media/lock.png');
+    --url-icon-maximise:                            url('../media/maximise.png');
+    --url-icon-minimise:                            url('../media/minimise.png');
+    --url-icon-report:                              url('../media/report.png');
+    --url-icon-reset:                               url('../media/reset.png');
+    --url-icon-tech:                                url('../media/tech.png');
+    --url-icon-updates:                             url('../media/updates.png');
+
+}
+

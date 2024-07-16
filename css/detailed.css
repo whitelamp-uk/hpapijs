@@ -1,0 +1,16 @@
+
+/*
+All the clever stuff
+ * Advanced CSS
+    - High-specifity selectors
+    - Animations
+ * Feature-specific imports
+*/
+
+/*
+After Config.messages.notifyTimeout these will be destroyed
+but how about a flashy arriving/disappearing act?
+*/
+[data-box][data-persistence="ephemeral"] {
+}
+

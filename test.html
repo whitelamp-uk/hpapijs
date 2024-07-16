@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title title="HpapiJS-based web application">HpapiJS test page</title>
+    <script>
+
+
+function init ( ) {
+    console.error (passwordSuggestion());
+}
+
+function passwordSuggestion (noRepeats=false) {
+    var arr=[],chars,i,nr,nrs,str='';
+    /*
+    At the time of writing there seems no method to fetch browser password
+    suggestions from JS.
+    Until that glorious day, here is a fairly strong pseudo-random password
+    suggester.
+    TODO: is this random function strong enough?
+    */
+    // A list of 70 unambiguous characters for the hard of seeing
+    chars = '34679ACEFGHJKLMNPQRTWXYabcdefghjkmnpqrstwxy,./|<>?;#:@~[]{}-=!$%^&()_+';
+    // Get twice as many random numbers as we need
+    nrs = crypto.getRandomValues (new Uint8Array(30));
+    for (i in nrs) {
+        if (arr.length>=15) {
+            // We have enough char index numbers
+            break;
+        }
+        // Normalise and round the random number to make a char index number
+        nr = Math.round (chars.length*nrs[i]/255);
+        if (!noRepeats || !arr.includes(nr)) {
+            // Add the chars index number
+            arr.push (nr);
+        }
+    }
+    for (i in arr) {
+        str += chars.charAt (arr[i]);
+    }
+    return str;
+}
+
+    </script>
+    <style>
+[data-dragzone] {
+    position: fixed;
+    z-index: 0;
+    box-sizing: border-box;
+    margin: 3em;
+    width: calc(100vw - 6em);
+    height: calc(100vh - 6em);
+    border-style: none;
+}
+[data-box] {
+    position: fixed;
+    z-index: 1;
+    left: 25vw;
+    top: 25vh;
+    box-sizing: border-box;
+    width: 50vw;
+    height: 50vh;
+    border-style: solid;
+    border-width: 1px;
+    background-color: white;
+    resize: both;
+}
+[data-box][data-resizable] {
+    resize: both;
+    overflow-x: auto;
+    overflow-y: scroll;
+}
+[data-box][data-collapsed] {
+    width: auto;
+    min-width: 12em;
+    height: 2.5em;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    resize: none;
+}
+img[data-dragger] {
+    float: right;
+    z-index: 2;
+    margin: 0.5em 0.5em 0.5em 0;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    padding: 0;
+    content: url('./media/move.png');
+    cursor: none;
+}
+img[data-dragger]:hover {
+    background-color: orange;
+}
+img[data-collapser] {
+    float: right;
+    z-index: 2;
+    margin: 0.5em 0.5em 0.5em 0;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    padding: 0;
+    content: url('./media/collapse.png');
+    cursor: none;
+}
+img[data-collapser]:hover {
+    background-color: orange;
+}
+    </style>
+  </head>
+
+  <body onload="init()">
+
+    <section data-box data-resizable data-collapsed>
+      <img data-dragger draggable="true" />
+      <img data-collapser />
+
+      Test box.
+
+    </section>
+
+    <section data-dragzone>
+    </section>
+
+  </body>
+
+</html>
+
+
